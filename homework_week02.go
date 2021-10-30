@@ -56,7 +56,7 @@ func InitConnectDB() (*sql.DB, error) {
 func userDao(userId string, db *sql.DB) (userInfo, error) {
 	var user userInfo
 	querySQLStr := strings.Join([]string{"select * from user where userId='", userId, "'"}, "")
-	err := db.QueryRow(querySQLStr).Scan(&user.id, &user.name, &user.age)
+	err := db.QueryRow(querySQLStr).Scan(&user.id, &user.name, &user.age, &user.email, &user.phoneNum, &user.gender)
 	if err != nil {
 		return user, errors.Wrap(err, "Database: "+userId+"'s information could not be found in the database.")
 	}
