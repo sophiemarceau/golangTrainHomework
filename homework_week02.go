@@ -27,7 +27,7 @@ type userInfo struct {
 }
 
 func main() {
-	queryUserInfo("123232322")
+	queryUserInfo("123232322") //userID
 }
 
 func queryUserInfo(userId string) (userInfo, error) {
@@ -62,4 +62,3 @@ func userDao(userId string, db *sql.DB) (userInfo, error) {
 	}
 	return user, nil
 }
-
