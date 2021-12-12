@@ -50,19 +50,6 @@ active_defrag_running:0
 lazyfree_pending_objects:0
 lazyfreed_objects:0
 
-
-
- value字节大小/B | 写入前used_memory_dataset/B | 写入后used_memory_dataset/B | key数量 | 平均每个key的占用内存空间/B |
-| --- | --- | --- | --- | --- |
-| 10 | 11202 | 3468962 | 86444 | 40.00 |
-| 20 | 11354 | 4171274 | 86665 | 40.00 |
-| 50 | 12482 | 6939666 | 86602 | 79.99 |
-| 100 | 11834 | 11783858 | 86559 | 136.00 |
-| 200 | 11986 | 21432738 | 86374 | 248.00 |
-| 1k | 12138 | 112716858 | 86430 | 1304.00 |
-| 5k | 12290 | 533291402 | 86459 | 6168.00 |
-
-
 redis-cli info memory 看日志前后的 写入前used_memory_dataset   写入后used_memory_dataset    
  
  redis-benchmark -h 127.0.0.1 -q -t set -r 100000 -n 500000 -d 10
